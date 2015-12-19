@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>NutriTracker: Watch Your Intake</title>
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
   <section id="nutritracker-app">
@@ -19,9 +19,9 @@
 
   <script id="results-template" type="text/template">
   <li class="result">
-    <p><%= name %>, <%= brand %></p>
-    <p><%= servingSize%> <%= servingUnit %></p>
-    <p><%= calories %></p>
+    <span class="description"><strong><%= name %>, <%= brand %></strong></span>
+    <span class="description">Serving size: <%= servingSize%> <%= servingUnit %></span>
+    <span class="description">Calories: <%= calories %></span>
   </li>
   </script>
    

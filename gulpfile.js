@@ -6,6 +6,7 @@ var stripDebug = require('gulp-strip-debug');
 var uglify = require('gulp-uglify');
 var autoprefix = require('gulp-autoprefixer');
 var minifyCss = require('gulp-minify-css');
+var sass = require('gulp-sass');
 
 gulp.task('jshint', function() {
   gulp.src('src/js/**/*.js')
@@ -20,6 +21,12 @@ gulp.task('imagemin', function() {
     .pipe(changed(imgDst))
     .pipe(imagemin())
     .pipe(gulp.dest(imgDst));
+});
+
+gulp.task('sass', function() {
+  gulp.src('src/assets/sass/**/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('src/assets/css/'));
 });
 
 gulp.task('scripts', function() {
@@ -38,7 +45,9 @@ gulp.task('styles', function() {
 
 gulp.task('watch', function() {
   gulp.watch('src/js/**/*.js', ['jshint', 'scripts']);
+  gulp.watch('src/assets/sass/**/*.scss', ['sass']);
   gulp.watch('src/assets/css/*.css', ['styles']);
 });
 
-gulp.task('default', ['imagemin', 'scripts', 'styles']);
+gulp.task('default', ['imagemin', 'scripts', 'sass', 'styles']);
+
