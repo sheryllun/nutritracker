@@ -3,19 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <title>NutriTracker: Watch Your Intake</title>
+  <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/normalize.css">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <section id="nutritracker-app">
-    <header id="header">
-      <h1>NutriTracker</h1>
-      <input type="text" placeholder="What did you eat today?" id="food-input">
-      <button id="search">Search Food</button>
-    </header>
-
-    <!-- Search results section -->
-    <ul id="results-list"></ul>
-  </section>
+  <div class="container-fluid" id="nutritracker-app">
+    <div class="row" id="header">
+      <div class="col-xs-6 col-xs-push-6">
+        <h1>NutriTracker</h1>
+      </div>
+      <div class="search-bar col-xs-6 col-xs-pull-6">
+        <input type="text" placeholder="What did you eat today?" id="food-input">
+        <button id="search">Search Food</button>
+      </div>
+   </div>
+    <div class="row">
+      <div class="col-sm-5">
+        <!-- Search results section -->
+        <ul id="results-list"></ul>
+      </div>
+      <div class="col-sm-7"><p>Hi</p></div>
+    </div>
+  </div> <!-- end container-fluid -->
 
   <script id="results-template" type="text/template">
   <li class="result">
@@ -26,6 +38,7 @@
   </script>
    
   <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
   <script src="js/models/item.js"></script>
