@@ -1,7 +1,22 @@
 $font-stack: 'Nunito', sans-serif;
+$font-size: 16px;
+$red: #A94442;
 
 body {
   font-family: $font-stack;
+  font-size: $font-size;
+  background: url('../images/backgrounds/salmon.jpg') no-repeat fixed center;
+  background-size: cover;
+}
+
+button {
+  padding: 12px 10px;
+  border-radius: 4px;
+  border: 2px solid $red;
+  background-color: $red;
+  color: white;
+
+
 }
 
 #header {
@@ -15,19 +30,27 @@ body {
     margin: 20px 0;
 
     input {
-      width: 75%;
-      padding: 5px;
-      border: 1px solid black;
-      border-radius: 5px;
+      width: 50%;
+      padding: 12px;
+      border: 2px solid $red;
+      border-radius: 4px;
+      float: left;
+    }
+
+    #search {
+      @extend button;
+      float: left;
+      position: relative;
+      left: -3px;
     }
   }
 }
 
 #results-list {
-  background-color: #3366cc;
+  background-color: #C3BD9B;
   padding: 14px;
 
-  li {
+  .result {
     list-style-type: none;
     display: block;
     padding: 5px 15px;
@@ -36,6 +59,17 @@ body {
 
     .description {
       display: block;
+    }
+
+    .more {
+      float: right;
+      position: relative;
+      top: -25px;
+    }
+
+    &:hover {
+      background-color: rgba(256, 256, 256, 0.5);
+      cursor: pointer;
     }
   }
 

@@ -46,7 +46,8 @@ app.AppView = Backbone.View.extend({
         brand: food.brand_name,
         serveQty: food.nf_serving_size_qty,
         serveUnit: food.nf_serving_size_unit,
-        calories: food.nf_calories
+        calories: food.nf_calories,
+        id: food.item_id
       };
 
       this.$results.append(this.resultsTemplate({
