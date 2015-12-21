@@ -4,7 +4,8 @@ app.AppView = Backbone.View.extend({
   el: '#nutritracker-app',
   events: {
     'click #search': 'searchFood',
-    'keyup #food-input': 'searchFood'
+    'keyup #food-input': 'searchFood',
+    'click .result' : 'getFoodId'
   },
   resultsTemplate: _.template($('#results-template').html()),
   initialize: function() {
@@ -25,7 +26,6 @@ app.AppView = Backbone.View.extend({
       url: 'https://api.nutritionix.com/v1_1/search/' + search,
       data: params,
       success: function(data) {
-        console.log(data);
         if(data.hits.length > 0) {
           self.displayResults(data.hits);
         }
@@ -37,17 +37,18 @@ app.AppView = Backbone.View.extend({
   },
   displayResults: function(result) {
     var self = this;
+    var foodDetails = {};
     this.$results.html('');
     
     for(var i=0; i < result.length; i++) {
       var food = result[i].fields;
-      var foodDetails = {
+      foodDetails = {
+        id: food.item_id,
         name: food.item_name,
         brand: food.brand_name,
         serveQty: food.nf_serving_size_qty,
         serveUnit: food.nf_serving_size_unit,
-        calories: food.nf_calories,
-        id: food.item_id
+        calories: food.nf_calories
       };
 
       this.$results.append(this.resultsTemplate({
@@ -55,8 +56,15 @@ app.AppView = Backbone.View.extend({
         brand: foodDetails.brand,
         servingSize: foodDetails.serveQty,
         servingUnit: foodDetails.serveUnit,
-        calories: foodDetails.calories
+        calories: foodDetails.calories,
+        id: foodDetails.id
       }));
     }
+  },
+  //On click of an individual food, get the id and pass it to new single food view
+  getFoodId: function(e) {
+    var foodId = $(e.currentTarget).data('id');
+    var singleFood = new app.SingleFoodDescriptionView(foodId);
   }
+  
 });

@@ -22,15 +22,38 @@
    </div>
     <div class="row">
       <div class="col-sm-5">
+        <h2>Search Results</h2>
         <!-- Search results section -->
         <ul id="results-list"></ul>
       </div>
-      <div class="col-sm-7"><p>Hi</p></div>
+      <div class="col-sm-7">
+        <div id="singlefooddiv"></div>
+      </div>
     </div>
   </div> <!-- end container-fluid -->
+  
+  <script id="food-detail-template" type="text/template">
+    <div class="single-food">
+      <span class="description"><strong><%= name %>, <%= brand %></strong></span>
+      <span class="description">Serving size: <%= servingSize%> <%= servingUnit %></span>
+      <span class="description">Calories: <%= calories %></span>
+      <p>Nutrition Breakdown</p>
+      <ul>
+        <li>Calcium: <%= calcium %></li>
+        <li>Fiber: <%= fiber %> grams</li>
+        <li>Protein: <%= protein %> grams</li>
+        <li>Sodium: <%= sodium %> mg</li>
+        <li>Sugar: <%= sugar %> grams</li>
+        <li>Fat: <%= fat %></li>
+        <li>Carbohydrates: <%= carbs %></li>
+        <li>Vitamin A: <%= vitA %>% daily value</li>
+        <li>Vitamin C: <%= vitC %>% daily value</li>
+      </ul>
+    </div>
+  </script>
 
   <script id="results-template" type="text/template">
-  <li class="result">
+  <li class="result" data-id="<%= id %>">
     <span class="description"><strong><%= name %>, <%= brand %></strong></span>
     <span class="description">Serving size: <%= servingSize%> <%= servingUnit %></span>
     <span class="description">Calories: <%= calories %></span>
@@ -46,6 +69,7 @@
   <script src="js/collections/list.js"></script>
   <script src="js/views/itemview.js"></script>
   <script src="js/views/app.js"></script>
+  <script src="js/views/singlefooddetail.js"></script>
   <script src="js/routers/router.js"></script>
   <script src="js/app.js"></script>
 </body>
