@@ -1,13 +1,9 @@
 var app = app || {};
 
 app.SingleFoodDescriptionView = Backbone.View.extend({
-  el: '#nutritracker-app',
-  events: {
-    'click .results': 'clearDetails'
-  },
+
   foodDescriptionTemplate: _.template($('#food-detail-template').html()),
   initialize: function(data) {
-    this.$singleFood = this.$('#singlefooddiv');
     this.getFoodDetails(data);
   },
   getFoodDetails: function(foodid) {
@@ -21,7 +17,7 @@ app.SingleFoodDescriptionView = Backbone.View.extend({
       url: 'https://api.nutritionix.com/v1_1/item?id=' + foodid,
       data: params,
       success: function(data) {
-        self.displaySingleFood(data);
+        self.render(data);
       },
       error: function() {
         console.log('single food error');
@@ -29,7 +25,7 @@ app.SingleFoodDescriptionView = Backbone.View.extend({
     });
 
   },
-  displaySingleFood: function(data) {
+  render: function(data) {
     var food = data;
     console.log(food.item_name);
 
@@ -50,7 +46,7 @@ app.SingleFoodDescriptionView = Backbone.View.extend({
         vitC: food.nf_vitamin_c_dv
       };
 
-      this.$singleFood.append(this.foodDescriptionTemplate({
+      $('#singlefooddiv').html(this.foodDescriptionTemplate({
         name: foodDetails.name,
         brand: foodDetails.brand,
         servingSize: foodDetails.serveQty,
@@ -68,8 +64,5 @@ app.SingleFoodDescriptionView = Backbone.View.extend({
       }));
 
     console.log(foodDetails);
-  },
-  clearDetails: function() {
-    this.$singleFood.html('');
   }
 });

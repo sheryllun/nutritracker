@@ -11,6 +11,8 @@ app.AppView = Backbone.View.extend({
   initialize: function() {
     this.$input = this.$('#food-input');
     this.$results = this.$('#results-list');
+    this.singleFoodsArray = [];
+    this.$singleFood = this.$('#singlefooddiv');
   },
   searchFood: function() {
     var search = this.$input.val().trim();
@@ -64,7 +66,18 @@ app.AppView = Backbone.View.extend({
   //On click of an individual food, get the id and pass it to new single food view
   getFoodId: function(e) {
     var foodId = $(e.currentTarget).data('id');
+    this.clearDetails();
     var singleFood = new app.SingleFoodDescriptionView(foodId);
+    this.singleFoodsArray.push(singleFood);
+  },
+
+  clearDetails: function() {
+    var children = this.singleFoodsArray;
+    for (var i = 0, l = children.length; i<l; i++) {
+      children[i].remove();
+    }
+    this.singleFoodsArray = [];
+    return this;
   }
   
 });
