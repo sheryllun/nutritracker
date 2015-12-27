@@ -46,9 +46,18 @@ button {
   }
 }
 
+.search-column {
+  h2 {
+    background-color: #C3BD9B;
+    margin: 0;
+    padding: 10px 10px 0;
+  }
+}
+
 #results-list {
   background-color: #C3BD9B;
   padding: 14px;
+  margin-top: 0;
 
   .result {
     list-style-type: none;
@@ -72,5 +81,9 @@ button {
       cursor: pointer;
     }
   }
+}
 
+#singlefooddiv {
+  background-color: white;
+  padding: 20px;
 }

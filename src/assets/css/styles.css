@@ -29,9 +29,15 @@ button, #header .search-bar #search {
     position: relative;
     left: -3px; }
 
+.search-column h2 {
+  background-color: #C3BD9B;
+  margin: 0;
+  padding: 10px 10px 0; }
+
 #results-list {
   background-color: #C3BD9B;
-  padding: 14px; }
+  padding: 14px;
+  margin-top: 0; }
   #results-list .result {
     list-style-type: none;
     display: block;
@@ -47,3 +53,7 @@ button, #header .search-bar #search {
     #results-list .result:hover {
       background-color: rgba(255, 255, 255, 0.5);
       cursor: pointer; }
+
+#singlefooddiv {
+  background-color: white;
+  padding: 20px; }
