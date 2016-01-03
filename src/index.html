@@ -20,6 +20,15 @@
         <button id="search">Search Food</button>
       </div>
    </div>
+   <div class="row">
+     <div class="col-xs-12 navigation">
+       <ul class="nav-menu">
+         <li><a href="">Food Details</a></li>
+         <li><a href="">My List</a></li>
+         <li><a href="">My NutriTracker</a></li>
+       </ul>
+     </div>
+   </div>
     <div class="row">
       <div class="col-sm-5 search-column">
         <h2>Search Results</h2>
@@ -31,24 +40,34 @@
       </div>
     </div>
   </div> <!-- end container-fluid -->
-  
+
+  <script id="food-list-template" type="text/template">
+    <div class="food-list">
+      <h2>My Foods</h2>
+      <ul></ul>
+    </div>
+  </script>
+
   <script id="food-detail-template" type="text/template">
     <div class="single-food">
       <span class="description"><strong><%= name %>, <%= brand %></strong></span>
       <span class="description">Serving size: <%= servingSize%> <%= servingUnit %></span>
-      <span class="description">Calories: <%= calories %></span>
+      <span class="description"><%= calories %> calories</span>
       <p>Nutrition Breakdown</p>
       <ul>
-        <li>Calcium: <%= calcium %></li>
         <li>Fiber: <%= fiber %> grams</li>
         <li>Protein: <%= protein %> grams</li>
         <li>Sodium: <%= sodium %> mg</li>
         <li>Sugar: <%= sugar %> grams</li>
-        <li>Fat: <%= fat %></li>
-        <li>Carbohydrates: <%= carbs %></li>
+        <li>Fat: <%= fat %> grams</li>
+        <li>Carbohydrates: <%= carbs %> grams</li>
+        <li>Calcium: <%= calcium %>% daily value</li>
         <li>Vitamin A: <%= vitA %>% daily value</li>
         <li>Vitamin C: <%= vitC %>% daily value</li>
       </ul>
+      <div class="serving-input">
+        <label for="servings">Number of servings: </label><input type="text" id="servings"><button class="button-sm" id="add">Add Food</button>
+      </div>
     </div>
   </script>
 
@@ -56,7 +75,7 @@
   <li class="result" data-id="<%= id %>">
     <span class="description"><strong><%= name %>, <%= brand %></strong></span>
     <span class="description">Serving size: <%= servingSize%> <%= servingUnit %></span>
-    <span class="description">Calories: <%= calories %></span>
+    <span class="description"><%= calories %> calories</span>
     <span class="more">Details &raquo;</span>
   </li>
   </script>

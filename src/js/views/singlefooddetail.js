@@ -17,6 +17,7 @@ app.SingleFoodDescriptionView = Backbone.View.extend({
       url: 'https://api.nutritionix.com/v1_1/item?id=' + foodid,
       data: params,
       success: function(data) {
+        console.log(data);
         self.render(data);
       },
       error: function() {
@@ -27,7 +28,6 @@ app.SingleFoodDescriptionView = Backbone.View.extend({
   },
   render: function(data) {
     var food = data;
-    console.log(food.item_name);
 
      var foodDetails = {
         name: food.item_name,
@@ -35,15 +35,15 @@ app.SingleFoodDescriptionView = Backbone.View.extend({
         serveQty: food.nf_serving_size_qty,
         serveUnit: food.nf_serving_size_unit,
         calories: food.nf_calories,
-        calcium: food.nf_calcium_dv,
-        fiber: food.nf_dietary_fiber,
+        calcium: food.nf_calcium_dv = 'null' ? 0 : food.nf_calcium_dv,
+        fiber: food.nf_dietary_fiber = 'null' ? 0 : food.nf_dietary_fiber,
         protein: food.nf_protein,
         sodium: food.nf_sodium,
-        sugar: food.nf_sugar,
+        sugar: food.nf_sugars = 'null' ? 0 : food.nf_sugars,
         fat: food.nf_total_fat,
-        carbs: food.nf_total_carbohydrates,
-        vitA: food.nf_vitamin_a_dv,
-        vitC: food.nf_vitamin_c_dv
+        carbs: food.nf_total_carbohydrate,
+        vitA: food.nf_vitamin_a_dv = 'null' ? 0 : food.nf_vitamin_a_dv,
+        vitC: food.nf_vitamin_c_dv = 'null' ? 0 : food.nf_vitamin_c_dv
       };
 
       $('#singlefooddiv').html(this.foodDescriptionTemplate({
