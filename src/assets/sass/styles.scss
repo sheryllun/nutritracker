@@ -49,6 +49,17 @@ button {
   }
 }
 
+.navigation {
+  text-align: right;
+}
+
+.nav-menu {
+  li {
+    list-style-type: none;
+    display: inline-block;
+  }
+}
+
 .search-column {
   h2 {
     background-color: #C3BD9B;
@@ -84,6 +95,10 @@ button {
       cursor: pointer;
     }
   }
+}
+
+#singlefooddiv, #listdiv, #trackerdiv {
+  display: none;
 }
 
 #singlefooddiv {

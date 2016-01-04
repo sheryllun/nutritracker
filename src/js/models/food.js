@@ -1,6 +1,6 @@
 var app = app || {};
 
-app.Food = Backbone.model.extend({
+app.Food = Backbone.Model.extend({
   defaults: {
     name: '',
     servings: 0,

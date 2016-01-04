@@ -28,7 +28,7 @@ app.SingleFoodDescriptionView = Backbone.View.extend({
   },
   render: function(data) {
     var food = data;
-
+    console.log(app.AppView.foodId);
      var foodDetails = {
         name: food.item_name,
         brand: food.brand_name,
