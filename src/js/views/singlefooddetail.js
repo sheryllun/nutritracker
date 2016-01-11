@@ -1,8 +1,11 @@
 var app = app || {};
 
 app.SingleFoodDescriptionView = Backbone.View.extend({
-
+  el: '#singlefooddiv',
   foodDescriptionTemplate: _.template($('#food-detail-template').html()),
+  events: {
+    'click #addfood': 'addFood'
+  },
   initialize: function(data) {
     this.getFoodDetails(data);
   },
@@ -45,8 +48,8 @@ app.SingleFoodDescriptionView = Backbone.View.extend({
         vitA: food.nf_vitamin_a_dv = 'null' ? 0 : food.nf_vitamin_a_dv,
         vitC: food.nf_vitamin_c_dv = 'null' ? 0 : food.nf_vitamin_c_dv
       };
-
-      $('#singlefooddiv').html(this.foodDescriptionTemplate({
+      
+      this.$el.html(this.foodDescriptionTemplate({
         name: foodDetails.name,
         brand: foodDetails.brand,
         servingSize: foodDetails.serveQty,
@@ -63,6 +66,16 @@ app.SingleFoodDescriptionView = Backbone.View.extend({
         vitC: foodDetails.vitC
       }));
 
+
     console.log(foodDetails);
+  },
+
+  addFood: function(e) {
+    console.log('added');
+    var servings = $(this).prev('#servings').val();
+    if(!servings) { return; }
+
+    var foodName = "test food";
+    app.foodList.create({ name: foodName, servings: servings});
   }
 });

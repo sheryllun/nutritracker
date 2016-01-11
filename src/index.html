@@ -46,8 +46,13 @@
   <script id="food-list-template" type="text/template">
     <div class="food-list">
       <h2>My Foods</h2>
-      <ul></ul>
+      <ul>
+      </ul>
     </div>
+  </script>
+
+  <script id="food-item-template" type="text/template">
+    <p><%= name %></p>
   </script>
 
   <script id="food-detail-template" type="text/template">
@@ -68,7 +73,7 @@
         <li>Vitamin C: <%= vitC %>% daily value</li>
       </ul>
       <div class="serving-input">
-        <label for="servings">Number of servings: </label><input type="text" id="servings"><button class="button-sm" id="add">Add Food</button>
+        <label for="servings">Number of servings: </label><input type="text" id="servings"><button class="button-sm" id="addfood">Add Food</button>
       </div>
     </div>
   </script>
@@ -86,11 +91,14 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
-  <script src="js/models/item.js"></script>
-  <script src="js/collections/list.js"></script>
-  <script src="js/views/itemview.js"></script>
-  <script src="js/views/app.js"></script>
+  <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+  <script src="https://cdn.firebase.com/libs/backbonefire/0.5.1/backbonefire.min.js"></script>
+  <script src="js/models/food.js"></script>
+  <script src="js/collections/foodlist.js"></script>
+  <script src="js/views/food-item-view.js"></script>
+  <script src="js/views/food-list-view.js"></script>
   <script src="js/views/singlefooddetail.js"></script>
+  <script src="js/views/app.js"></script>
   <script src="js/routers/router.js"></script>
   <script src="js/app.js"></script>
 </body>
