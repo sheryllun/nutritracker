@@ -7,6 +7,7 @@ app.SingleFoodDescriptionView = Backbone.View.extend({
     'click #addfood': 'addFood'
   },
   initialize: function(data) {
+    this.$input = this.$('#servings');
     this.getFoodDetails(data);
   },
   getFoodDetails: function(foodid) {
@@ -31,7 +32,6 @@ app.SingleFoodDescriptionView = Backbone.View.extend({
   },
   render: function(data) {
     var food = data;
-    console.log(app.AppView.foodId);
      var foodDetails = {
         name: food.item_name,
         brand: food.brand_name,
@@ -48,7 +48,7 @@ app.SingleFoodDescriptionView = Backbone.View.extend({
         vitA: food.nf_vitamin_a_dv = 'null' ? 0 : food.nf_vitamin_a_dv,
         vitC: food.nf_vitamin_c_dv = 'null' ? 0 : food.nf_vitamin_c_dv
       };
-      
+
       this.$el.html(this.foodDescriptionTemplate({
         name: foodDetails.name,
         brand: foodDetails.brand,
@@ -66,16 +66,15 @@ app.SingleFoodDescriptionView = Backbone.View.extend({
         vitC: foodDetails.vitC
       }));
 
-
     console.log(foodDetails);
   },
 
   addFood: function(e) {
-    console.log('added');
-    var servings = $(this).prev('#servings').val();
+    var servings = $('#servings').val();
     if(!servings) { return; }
 
-    var foodName = "test food";
+    var foodName = $('.item-name').text();
     app.foodList.create({ name: foodName, servings: servings});
+    console.log('added');
   }
 });

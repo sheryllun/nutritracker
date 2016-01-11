@@ -14,8 +14,9 @@ app.AppView = Backbone.View.extend({
     this.singleFoodsArray = [];
     this.foodId = '';
   },
+  //override default view.remove(): instead of completely removing the el, just clear out its contents.
   remove: function(view) {
-      view.$el.empty().off(); /* off to unbind the events */
+      view.$el.empty().off(); // off to unbind the events
       view.stopListening();
       return this;
 },
@@ -75,8 +76,7 @@ app.AppView = Backbone.View.extend({
     var singleFood = new app.SingleFoodDescriptionView(foodId);
     this.singleFoodsArray.push(singleFood);
     this.foodId = foodId;
-    console.log(this.singleFoodsArray);
-
+    location.href = '#details';
   },
 
   //Removes any existing SingleFood views
