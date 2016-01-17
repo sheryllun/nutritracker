@@ -7,6 +7,9 @@ body {
   background-position: center;
   background-size: cover; }
 
+h2 {
+  margin: 0; }
+
 button, #header .search-bar #search {
   padding: 12px 10px;
   border-radius: 4px;
@@ -17,6 +20,9 @@ button, #header .search-bar #search {
 .button-sm {
   padding: 6px;
   font-size: 12px; }
+
+.alignright {
+  float: right; }
 
 #header h1 {
   font-family: 'Bree Serif', serif;
@@ -80,9 +86,29 @@ button, #header .search-bar #search {
 
 #singlefooddiv {
   background-color: white;
-  padding: 20px; }
+  padding: 10px 20px 20px 20px; }
+  #singlefooddiv h2 {
+    margin-bottom: 19px; }
   #singlefooddiv .serving-input {
     text-align: right; }
     #singlefooddiv .serving-input input {
       width: 50px;
       margin: 0 10px; }
+
+#listdiv {
+  background-color: #86AF99;
+  padding: 0 14px 14px 14px; }
+  #listdiv h2 {
+    padding-top: 10px; }
+
+.foodlist {
+  padding: 0; }
+  .foodlist li {
+    list-style-type: none;
+    background-color: #B3D6C5;
+    padding: 5px 15px;
+    margin-bottom: 10px; }
+    .foodlist li p {
+      font-weight: bold;
+      margin-top: 0;
+      margin-bottom: 10px; }

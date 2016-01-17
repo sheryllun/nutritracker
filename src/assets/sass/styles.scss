@@ -16,6 +16,10 @@ body {
   background-size: cover;
 }
 
+h2 {
+  margin: 0;
+}
+
 button {
   padding: 12px 10px;
   border-radius: 4px;
@@ -28,6 +32,8 @@ button {
   padding: 6px;
   font-size: 12px;
 }
+
+.alignright { float: right; }
 
 #header {
   h1 {
@@ -117,7 +123,11 @@ button {
 
 #singlefooddiv {
   background-color: white;
-  padding: 20px;
+  padding: 10px 20px 20px 20px;
+
+  h2 {
+    margin-bottom: 19px;
+  }
 
   .serving-input {
     text-align: right;
@@ -125,6 +135,32 @@ button {
     input {
       width: 50px;
       margin: 0 10px;
+    }
+  }
+}
+
+#listdiv {
+  background-color: #86AF99;
+  padding: 0 14px 14px 14px;
+
+  h2 {
+    padding-top: 10px;
+  }
+}
+
+.foodlist {
+  padding: 0;
+
+  li {
+    list-style-type: none;
+    background-color: #B3D6C5;
+    padding: 5px 15px;
+    margin-bottom: 10px;
+
+    p {
+      font-weight: bold;
+      margin-top: 0;
+      margin-bottom: 10px;
     }
   }
 }

@@ -37,29 +37,27 @@
       </div>
       <div class="col-sm-7">
         <div id="singlefooddiv"></div>
-        <div id="listdiv">My List</div>
-        <div id="trackerdiv">My Tracker</div>
+        <div id="listdiv">
+          <h2>My List</h2>
+          <ul class="foodlist"></ul>
+        </div>
+        <div id="trackerdiv"><h2>My Tracker</h2></div>
       </div>
     </div>
   </div> <!-- end container-fluid -->
 
-  <script id="food-list-template" type="text/template">
-    <div class="food-list">
-      <h2>My Foods</h2>
-      <ul>
-      </ul>
-    </div>
-  </script>
-
   <script id="food-item-template" type="text/template">
     <p><%= name %></p>
+    <span>You had: <%= servings %> servings</span> 
+    <span class="alignright">Your calories: <%= calories %></span>
   </script>
 
   <script id="food-detail-template" type="text/template">
     <div class="single-food">
+      <h2>Food Detail</h2>
       <span class="description"><span class="item-name"><%= name %></span>, <%= brand %></span>
       <span class="description">Serving size: <%= servingSize%> <%= servingUnit %></span>
-      <span class="description"><%= calories %> calories</span>
+      <span class="description"><span class="calories"><%= calories %></span> calories</span>
       <p>Nutrition Breakdown</p>
       <ul>
         <li>Fiber: <%= fiber %> grams</li>

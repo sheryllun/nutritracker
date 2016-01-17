@@ -1,1 +1,1 @@
-var app=app||{};app.FoodListView=Backbone.View.extend({listTemplate:_.template($("#food-list-template").html()),initialize:function(){this.listenTo(app.foodList,"add",this.addOne)},addOne:function(e){var t=new app.FoodItemView({model:e});$("#listdiv").append(t.render().el)}});
+var app=app||{};app.FoodListView=Backbone.View.extend({initialize:function(){this.listenTo(app.foodList,"add",this.addOne)},addOne:function(e){var i=new app.FoodItemView({model:e});$(".foodlist").append(i.render().el)}});

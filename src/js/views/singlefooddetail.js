@@ -70,10 +70,16 @@ app.SingleFoodDescriptionView = Backbone.View.extend({
   },
 
   addFood: function(e) {
-    var servings = $('#servings').val();
+    var servings = parseInt($('#servings').val());
     if(!servings) { return; }
 
     var foodName = $('.item-name').text();
-    app.foodList.create({ name: foodName, servings: servings});
+    var calories = parseInt($('.calories').text());
+    app.foodList.create({ 
+      name: foodName, 
+      servings: servings, 
+      calories: calories});
+    
+    location.href = '#mylist';
   }
 });
