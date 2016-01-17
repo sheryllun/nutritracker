@@ -75,6 +75,5 @@ app.SingleFoodDescriptionView = Backbone.View.extend({
 
     var foodName = $('.item-name').text();
     app.foodList.create({ name: foodName, servings: servings});
-    console.log('added');
   }
 });
