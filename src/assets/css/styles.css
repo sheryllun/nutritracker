@@ -103,6 +103,10 @@ button, #header .search-bar #search {
 
 .foodlist {
   padding: 0; }
+  .foodlist .remove {
+    float: right;
+    padding-left: 10px;
+    cursor: pointer; }
   .foodlist li {
     list-style-type: none;
     background-color: #B3D6C5;

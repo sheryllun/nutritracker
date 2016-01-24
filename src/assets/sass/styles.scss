@@ -151,6 +151,12 @@ button {
 .foodlist {
   padding: 0;
 
+  .remove {
+    float: right;
+    padding-left: 10px;
+    cursor: pointer;
+  }
+
   li {
     list-style-type: none;
     background-color: #B3D6C5;
