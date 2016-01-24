@@ -46,6 +46,10 @@
     </div>
   </div> <!-- end container-fluid -->
 
+  <script id="tracker-template" type="text/template">
+    <p>Total Calories: <%= total-cals %> / 2000</p>
+    <h3>Nutrition Breakdown</h3>
+  </script>
   <script id="food-item-template" type="text/template">
   <span class="glyphicon glyphicon-remove-sign remove"></span>
     <p><%= name %></p>
@@ -61,15 +65,15 @@
       <span class="description"><span class="calories"><%= calories %></span> calories</span>
       <p>Nutrition Breakdown</p>
       <ul>
-        <li>Fiber: <%= fiber %> grams</li>
-        <li>Protein: <%= protein %> grams</li>
-        <li>Sodium: <%= sodium %> mg</li>
-        <li>Sugar: <%= sugar %> grams</li>
-        <li>Fat: <%= fat %> grams</li>
-        <li>Carbohydrates: <%= carbs %> grams</li>
-        <li>Calcium: <%= calcium %>% daily value</li>
-        <li>Vitamin A: <%= vitA %>% daily value</li>
-        <li>Vitamin C: <%= vitC %>% daily value</li>
+        <li>Fiber: <span class="fiber"><%= fiber %></span> grams</li>
+        <li>Protein: <span class="protein"><%= protein %></span> grams</li>
+        <li>Sodium: <span class="sodium"><%= sodium %></span> mg</li>
+        <li>Sugar: <span class="sugar"><%= sugar %> </span>grams</li>
+        <li>Fat: <span class="fat"><%= fat %></span> grams</li>
+        <li>Carbohydrates: <span class="carbs"><%= carbs %></span> grams</li>
+        <li>Calcium: <span class="calcium"><%= calcium %></span>% daily value</li>
+        <li>Vitamin A: <span class="vita"><%= vitA %></span>% daily value</li>
+        <li>Vitamin C: <span class="vitc"><%= vitC %></span>% daily value</li>
       </ul>
       <div class="serving-input">
         <label for="servings">Number of servings: </label><input type="text" id="servings"><button class="button-sm" id="addfood">Add Food</button>

@@ -38,15 +38,15 @@ app.SingleFoodDescriptionView = Backbone.View.extend({
         serveQty: food.nf_serving_size_qty,
         serveUnit: food.nf_serving_size_unit,
         calories: food.nf_calories,
-        calcium: food.nf_calcium_dv = 'null' ? 0 : food.nf_calcium_dv,
-        fiber: food.nf_dietary_fiber = 'null' ? 0 : food.nf_dietary_fiber,
+        calcium: food.nf_calcium_dv = (food.nf_calcium_dv === null) ? 0 : food.nf_calcium_dv,
+        fiber: food.nf_dietary_fiber = (food.nf_dietary_fiber === null) ? 0 : food.nf_dietary_fiber,
         protein: food.nf_protein,
         sodium: food.nf_sodium,
-        sugar: food.nf_sugars = 'null' ? 0 : food.nf_sugars,
+        sugar: food.nf_sugars = (food.nf_sugars === null) ? 0 : food.nf_sugars,
         fat: food.nf_total_fat,
         carbs: food.nf_total_carbohydrate,
-        vitA: food.nf_vitamin_a_dv = 'null' ? 0 : food.nf_vitamin_a_dv,
-        vitC: food.nf_vitamin_c_dv = 'null' ? 0 : food.nf_vitamin_c_dv
+        vitA: food.nf_vitamin_a_dv = (food.nf_vitamin_a_dv === null) ? 0 : food.nf_vitamin_a_dv,
+        vitC: food.nf_vitamin_c_dv = (food.nf_vitamin_c_dv === null) ? 0 : food.nf_vitamin_c_dv
       };
 
       this.$el.html(this.foodDescriptionTemplate({
@@ -75,11 +75,32 @@ app.SingleFoodDescriptionView = Backbone.View.extend({
 
     var foodName = $('.item-name').text();
     var calories = parseInt($('.calories').text());
+    var fiber = parseFloat($('.fiber').text());
+    var protein = parseFloat($('.protein').text());
+    var sodium = parseFloat($('.sodium').text());
+    var sugar = parseFloat($('.sugar').text());
+    var carbs = parseFloat($('.carbs').text());
+    var fat = parseFloat($('.fat').text());
+    var calcium = parseFloat($('.calcium').text());
+    var vita = parseFloat($('.vita').text());
+    var vitc = parseFloat($('.vitc').text());
+
     app.foodList.create({ 
       name: foodName, 
       servings: servings, 
-      calories: calories});
+      calories: calories,
+      fiber: fiber,
+      protein: protein,
+      sodium: sodium,
+      sugar: sugar,
+      carbs: carbs,
+      fat: fat,
+      calcium: calcium,
+      vitA: vita,
+      vitC: vitc
+    });
     
+    $('#servings').val('');
     location.href = '#mylist';
   }
 });
