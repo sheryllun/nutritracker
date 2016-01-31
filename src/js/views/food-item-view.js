@@ -15,7 +15,7 @@ app.FoodItemView = Backbone.View.extend({
     this.$el.html(this.itemTemplate({
       name: this.model.toJSON().name,
       servings: this.model.toJSON().servings,
-      calories: this.calcTotalCals()
+      calories: this.model.toJSON().totalCals
       }
     ));
     return this;
@@ -24,9 +24,5 @@ app.FoodItemView = Backbone.View.extend({
   removeFood: function() {
     this.model.destroy();
     this.remove();
-  },
-
-  calcTotalCals: function() {
-    return this.model.toJSON().servings * this.model.toJSON().calories;
   }
 });

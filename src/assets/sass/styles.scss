@@ -1,6 +1,7 @@
 $font-stack: 'Nunito', sans-serif;
 $font-size: 16px;
 $red: #A94442;
+$h2-padding: 10px 10px 0;
 
 body {
   font-family: $font-stack;
@@ -84,7 +85,7 @@ button {
   h2 {
     background-color: #C3BD9B;
     margin: 0;
-    padding: 10px 10px 0;
+    padding: $h2-padding;
   }
 }
 
@@ -168,5 +169,20 @@ button {
       margin-top: 0;
       margin-bottom: 10px;
     }
+  }
+}
+
+#trackerdiv {
+  background-color: #337AB7;
+  padding: 0 10px 25px;
+
+  h2 {
+    padding: $h2-padding;
+  }
+
+  .tracker-holder {
+    background-color: #689FCE;
+    padding: 5px 15px;
+    margin: 1em 0;
   }
 }

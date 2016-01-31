@@ -41,14 +41,17 @@
           <h2>My List</h2>
           <ul class="foodlist"></ul>
         </div>
-        <div id="trackerdiv"><h2>My Tracker</h2></div>
+        <div id="trackerdiv"></div>
       </div>
     </div>
   </div> <!-- end container-fluid -->
 
   <script id="tracker-template" type="text/template">
-    <p>Total Calories: <%= total-cals %> / 2000</p>
-    <h3>Nutrition Breakdown</h3>
+    <h2>My Tracker</h2>
+    <div class="tracker-holder">
+      <p>Total Calories: <%= totalcals %> / 2000</p>
+      <h3>Nutrition Breakdown</h3>
+    </div>
   </script>
   <script id="food-item-template" type="text/template">
   <span class="glyphicon glyphicon-remove-sign remove"></span>
@@ -76,7 +79,7 @@
         <li>Vitamin C: <span class="vitc"><%= vitC %></span>% daily value</li>
       </ul>
       <div class="serving-input">
-        <label for="servings">Number of servings: </label><input type="text" id="servings"><button class="button-sm" id="addfood">Add Food</button>
+        <label for="servings">Number of servings: </label><input type="number" min="0" id="servings"><button class="button-sm" id="addfood">Add Food</button>
       </div>
     </div>
   </script>
@@ -100,6 +103,7 @@
   <script src="js/collections/foodlist.js"></script>
   <script src="js/views/food-item-view.js"></script>
   <script src="js/views/food-list-view.js"></script>
+  <script src="js/views/tracker-view.js"></script>
   <script src="js/views/singlefooddetail.js"></script>
   <script src="js/views/app.js"></script>
   <script src="js/routers/router.js"></script>
