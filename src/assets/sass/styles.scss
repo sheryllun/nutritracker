@@ -86,6 +86,16 @@ button {
 }
 
 .search-column {
+  max-height: 589px;
+  overflow: auto;
+  padding-right: 0;
+
+  .search-intro {
+    background-color: #C3BD9B;
+    margin: 0 auto;
+    padding: 10px;
+  }
+
   h2 {
     background-color: #C3BD9B;
     margin: 0;
@@ -101,6 +111,7 @@ button {
   background-color: #C3BD9B;
   padding: 14px;
   margin-top: 0;
+  margin-bottom: 0;
 
   .result {
     list-style-type: none;

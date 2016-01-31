@@ -24,11 +24,12 @@ app.AppView = Backbone.View.extend({
     var search = this.$input.val().trim();
     var self = this;
     var params = {
-      'results': '0:5',
+      'results': '0:10',
       'fields': '*',
       'appKey': 'ba5c22dd374e75a04c9bbd9d5e89c273',
       'appId': 'b898ecf9'
     };
+    $('.search-intro').hide();
 
     $.ajax({
       url: 'https://api.nutritionix.com/v1_1/search/' + search,
@@ -77,6 +78,7 @@ app.AppView = Backbone.View.extend({
     this.singleFoodsArray.push(singleFood);
     this.foodId = foodId;
     location.href = '#details';
+    $('#food-input').val('');
   },
 
   //Removes any existing SingleFood views
