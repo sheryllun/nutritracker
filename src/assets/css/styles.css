@@ -10,6 +10,9 @@ body {
 h2 {
   margin: 0; }
 
+li {
+  list-style-type: none; }
+
 button, #header .search-bar #search {
   padding: 12px 10px;
   border-radius: 4px;
@@ -122,7 +125,22 @@ button, #header .search-bar #search {
   padding: 0 10px 25px; }
   #trackerdiv h2 {
     padding: 10px 10px 0; }
+  #trackerdiv h3 {
+    text-decoration: underline; }
   #trackerdiv .tracker-holder {
     background-color: #689FCE;
     padding: 5px 15px;
     margin: 1em 0; }
+  #trackerdiv .cal-total {
+    font-size: 20px; }
+    #trackerdiv .cal-total .cals-total-num {
+      font-size: 40px; }
+
+.progress {
+  max-width: 400px; }
+
+.progress-bar {
+  background-color: #3CA23E; }
+
+p.daily {
+  margin-bottom: 0; }

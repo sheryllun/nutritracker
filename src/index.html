@@ -49,8 +49,35 @@
   <script id="tracker-template" type="text/template">
     <h2>My Tracker</h2>
     <div class="tracker-holder">
-      <p>Total Calories: <%= totalcals %> / 2000</p>
-      <h3>Nutrition Breakdown</h3>
+      <p class="cal-total">Total Calories: <span class="cals-total-num"><%= totalcals %></span> / <span class="default-num">2000</span></p>
+      <h3>Nutrition Totals</h3>
+      <ul>
+        <li>Fiber: <%= totalfiber %> grams</li>
+        <li>Protein: <%= totalprotein %> grams</li>
+        <li>Sodium: <%= totalsodium %> mg</li>
+        <li>Sugar: <%= totalsugar %> grams</li>
+        <li>Fat: <%= totalfat %> grams</li>
+        <li>Carbohydrates: <%= totalcarbs %> grams</li>
+      </ul>
+      <h3>% Daily Values</h3>
+      <p class="daily">Vitamin A</p>
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped vit-a" role="progressbar">
+          <%= totalvita %>
+        </div>
+      </div>
+      <p class="daily">Vitamin C</p>
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped vit-c" role="progressbar">
+          <%= totalvitc %>
+        </div>
+      </div>
+      <p class="daily">Calcium</p>
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped calcium" role="progressbar">
+          <%= totalcalcium %>
+        </div>
+      </div>
     </div>
   </script>
   <script id="food-item-template" type="text/template">
@@ -79,7 +106,7 @@
         <li>Vitamin C: <span class="vitc"><%= vitC %></span>% daily value</li>
       </ul>
       <div class="serving-input">
-        <label for="servings">Number of servings: </label><input type="number" min="0" id="servings"><button class="button-sm" id="addfood">Add Food</button>
+        <label for="servings">Number of servings: </label><input type="number" id="servings"><button class="button-sm" id="addfood">Add Food</button>
       </div>
     </div>
   </script>

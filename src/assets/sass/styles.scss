@@ -21,6 +21,10 @@ h2 {
   margin: 0;
 }
 
+li {
+  list-style-type: none;
+}
+
 button {
   padding: 12px 10px;
   border-radius: 4px;
@@ -180,9 +184,32 @@ button {
     padding: $h2-padding;
   }
 
+  h3 { 
+    text-decoration: underline;
+  }
+
   .tracker-holder {
     background-color: #689FCE;
     padding: 5px 15px;
     margin: 1em 0;
   }
+
+  .cal-total {
+    font-size: 20px;
+
+      .cals-total-num {
+        font-size: 40px;
+      }
+  }
 }
+
+.progress { 
+  max-width: 400px;
+}
+
+.progress-bar {
+  background-color: #3CA23E;
+}
+
+p.daily { margin-bottom: 0; }
+

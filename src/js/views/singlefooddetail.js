@@ -75,15 +75,15 @@ app.SingleFoodDescriptionView = Backbone.View.extend({
 
     var foodName = $('.item-name').text();
     var calories = parseInt($('.calories').text());
-    var fiber = parseFloat($('.fiber').text());
-    var protein = parseFloat($('.protein').text());
-    var sodium = parseFloat($('.sodium').text());
-    var sugar = parseFloat($('.sugar').text());
-    var carbs = parseFloat($('.carbs').text());
-    var fat = parseFloat($('.fat').text());
-    var calcium = parseFloat($('.calcium').text());
-    var vita = parseFloat($('.vita').text());
-    var vitc = parseFloat($('.vitc').text());
+    var fiber = parseInt($('.fiber').text());
+    var protein = parseInt($('.protein').text());
+    var sodium = parseInt($('.sodium').text());
+    var sugar = parseInt($('.sugar').text());
+    var carbs = parseInt($('.carbs').text());
+    var fat = parseInt($('.fat').text());
+    var calcium = parseInt($('.calcium').text());
+    var vita = parseInt($('.vita').text());
+    var vitc = parseInt($('.vitc').text());
 
     app.foodList.create({ 
       name: foodName, 
