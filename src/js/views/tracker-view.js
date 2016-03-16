@@ -8,6 +8,7 @@ app.TrackerView = Backbone.View.extend({
   },
 
   render: function() {
+    var self = this;
     var totals = this.calcTotals(app.foodList);
     console.log(totals);
     this.$el.html(this.trackerTemplate({
@@ -22,10 +23,18 @@ app.TrackerView = Backbone.View.extend({
       totalvitc: totals.totalVitC + '%',
       totalcalcium: totals.totalCalcium + '%'
     }));
-    $('.progress-bar.vit-a').css('width', totals.totalVitA + '%');
-    $('.progress-bar.vit-c').css('width', totals.totalVitC + '%');
-    $('.progress-bar.calcium').css('width', totals.totalCalcium + '%');
 
+    self.renderProgressBar(totals.totalVitA, 'vit-a');
+    self.renderProgressBar(totals.totalVitC, 'vit-c');
+    self.renderProgressBar(totals.totalCalcium, 'calcium');
+  },
+
+  renderProgressBar: function(total, bartype) {
+    if(total >= 100) {
+      $('.progress-bar.' + bartype).css('width', '100%');
+    } else {
+      $('.progress-bar.' + bartype).css('width', total + '%');
+    }
   },
 
   calcTotals: function(collection) {

@@ -2,6 +2,7 @@ $font-stack: 'Nunito', sans-serif;
 $font-size: 16px;
 $red: #A94442;
 $h2-padding: 10px 10px 0;
+$br: 4px;
 
 body {
   font-family: $font-stack;
@@ -27,7 +28,7 @@ li {
 
 button {
   padding: 12px 10px;
-  border-radius: 4px;
+  border-radius: $br;
   border: 2px solid $red;
   background-color: $red;
   color: white;
@@ -89,6 +90,7 @@ button {
   max-height: 589px;
   overflow: auto;
   padding-right: 0;
+  border-radius: $br;
 
   .search-intro {
     background-color: #C3BD9B;
@@ -135,6 +137,7 @@ button {
 
 #singlefooddiv, #listdiv, #trackerdiv {
   display: none;
+  border-radius: $br;
 }
 
 #singlefooddiv {
