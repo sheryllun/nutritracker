@@ -13,6 +13,7 @@ app.AppView = Backbone.View.extend({
     this.$results = this.$('#results-list');
     this.singleFoodsArray = [];
     this.foodId = '';
+    $('#datepicker').datepicker();
   },
   //override default view.remove(): instead of completely removing the el, just clear out its contents.
   remove: function(view) {
