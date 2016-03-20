@@ -1,1 +1,1 @@
-var app=app||{},FoodList=Backbone.Firebase.Collection.extend({model:app.Food,url:"https://shining-inferno-5.firebaseio.com/"});app.foodList=new FoodList;
+var app=app||{},FoodList=Backbone.Firebase.Collection.extend({model:app.Food,initialize:function(e,t){var i=this.checkDate(),o=new Firebase("https://shining-inferno-5.firebaseio.com/");this.url=o+"/"+i},checkDate:function(){var e=new Date,t=e.getFullYear().toString(),i=(e.getMonth()+1).toString(),o=e.getDate().toString();return i+o+t}});app.foodList=new FoodList;

@@ -9,6 +9,7 @@ app.FoodListView = Backbone.View.extend({
   addOne: function(food) {
     var view = new app.FoodItemView({ model: food });
     $('.intro-text').hide();
+    //Renders the template in food-item-view.js and appends it to the list view
     $('.foodlist').append(view.render().el);
   },
 
