@@ -56,6 +56,12 @@ button, #header .search-bar #search {
   font-size: 20px;
   font-weight: bold;
   color: black; }
+  .viewdate input {
+    width: 100px;
+    border-radius: 4px;
+    font-size: 14px;
+    padding: 7px;
+    border: 2px solid #808080; }
 
 .navigation {
   text-align: right; }

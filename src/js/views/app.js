@@ -5,7 +5,8 @@ app.AppView = Backbone.View.extend({
   events: {
     'click #search': 'searchFood',
     'keyup #food-input': 'searchFood',
-    'click .result' : 'getFoodId'
+    'click .result' : 'getFoodId',
+    'click .godate' : 'getDate'
   },
   resultsTemplate: _.template($('#results-template').html()),
   initialize: function() {
@@ -90,6 +91,14 @@ app.AppView = Backbone.View.extend({
     }
     this.singleFoodsArray = [];
     return this;
+  },
+
+  getDate: function() {
+    var date = $('#datepicker').val();
+    if(date !== null) {
+      date = date.replace(/[\/]/g, '');
+    }
+    return date;
   }
   
 });
