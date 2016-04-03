@@ -6,11 +6,15 @@ app.FoodListView = Backbone.View.extend({
     this.listenTo(app.foodList, 'remove', this.checkCollection);
   },
 
+  render: function(view) {
+    //Renders the template in food-item-view.js and appends it to the list view
+    $('.foodlist').append(view.render().el);
+  },
+
   addOne: function(food) {
     var view = new app.FoodItemView({ model: food });
     $('.intro-text').hide();
-    //Renders the template in food-item-view.js and appends it to the list view
-    $('.foodlist').append(view.render().el);
+    this.render(view);
   },
 
   checkCollection: function() {
