@@ -6,7 +6,7 @@ app.AppView = Backbone.View.extend({
     'click #search': 'searchFood',
     'keyup #food-input': 'searchFood',
     'click .result' : 'getFoodId',
-    'click .godate' : 'getDate'
+    'click .godate' : 'loadList'
   },
   resultsTemplate: _.template($('#results-template').html()),
   initialize: function() {
@@ -99,6 +99,9 @@ app.AppView = Backbone.View.extend({
       date = date.replace(/[\/]/g, '');
     }
     return date;
+  },
+
+  loadList: function() {
+    var date = this.getDate();
   }
-  
 });
