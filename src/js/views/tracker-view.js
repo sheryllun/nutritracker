@@ -9,8 +9,9 @@ app.TrackerView = Backbone.View.extend({
 
   render: function() {
     var self = this;
-    var totals = this.calcTotals(app.foodList);
-    console.log(totals);
+    var currCollection = this.collection.byDate(app.currentDate);
+    var totals = this.calcTotals(currCollection);
+    
     this.$el.html(this.trackerTemplate({
       totalcals: totals.totalCals,
       totalfiber: totals.totalFiber,

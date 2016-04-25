@@ -10,7 +10,7 @@ app.FoodItemView = Backbone.View.extend({
     this.listenTo(this.model, 'change', this.render);
   },
   render: function() {
-    console.log(this.model.toJSON());
+    //console.log(this.model.toJSON());
 
     this.$el.html(this.itemTemplate({
       name: this.model.toJSON().name,

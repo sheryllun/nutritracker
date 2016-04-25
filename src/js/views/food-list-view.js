@@ -4,21 +4,28 @@ app.FoodListView = Backbone.View.extend({
   initialize: function() {
     this.listenTo(app.foodList, 'add', this.addOne);
     this.listenTo(app.foodList, 'remove', this.checkCollection);
+
   },
 
-  render: function(view) {
-    //Renders the template in food-item-view.js and appends it to the list view
+  render: function(items) {
+    $('.foodlist').html('');
+    items.each(function(food) {
+      var view = new app.FoodItemView( {model: food, collection: this.collection });
     $('.foodlist').append(view.render().el);
+    });
+    return this;
   },
 
-  addOne: function(food) {
-    var view = new app.FoodItemView({ model: food });
+  addOne: function() {
     $('.intro-text').hide();
-    this.render(view);
+    var date = app.currentDate;
+    var currCollection = this.collection.byDate(date);
+    console.log(currCollection);
+    this.render(currCollection);
   },
 
   checkCollection: function() {
-    if(this.collection.length === 0) {
+    if(this.currCollection.length === 0) {
       $('.intro-text').show();
     }
   }

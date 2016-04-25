@@ -1,1 +1,1 @@
-var app=app||{};new app.FoodListView({collection:app.foodList}),new app.TrackerView({collection:app.foodList}),new app.AppView,new app.Router,Backbone.history.start();
+var app=app||{};app.checkDate=function(){var t=new Date,e=t.getFullYear().toString(),p=(t.getMonth()+1).toString(),a=t.getDate().toString();return 1===p.length&&(p="0"+p),1===a.length&&(a="0"+a),p+a+e},app.currentDate=app.checkDate(),new app.FoodListView({collection:app.foodList}),new app.TrackerView({collection:app.foodList}),new app.AppView,new app.Router,Backbone.history.start();
