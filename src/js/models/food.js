@@ -14,6 +14,7 @@ app.Food = Backbone.Model.extend({
     calcium: 0,
     vitA: 0,
     vitC: 0,
-    totalCals: 0
+    totalCals: 0,
+    dateAdded: ''
   }
 });

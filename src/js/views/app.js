@@ -102,6 +102,8 @@ app.AppView = Backbone.View.extend({
   },
 
   loadList: function() {
-    var date = this.getDate();
+    app.currentDate = this.getDate();
+    app.foodList.trigger('add');
+    app.foodList.trigger('update');
   }
 });

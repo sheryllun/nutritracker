@@ -101,7 +101,8 @@ app.SingleFoodDescriptionView = Backbone.View.extend({
         calcium: calcium,
         vitA: vita,
         vitC: vitc,
-        totalCals: calories * servings
+        totalCals: calories * servings,
+        dateAdded: app.currentDate
       });
       
       $('#servings').val('');
